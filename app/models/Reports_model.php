@@ -51,7 +51,7 @@ class Reports_model extends CI_Model
 			return $data;
 		}
 	}
-	public function getallproductos()
+	public function getallproductos($product, $start_date, $end_date)
 	{
 		 $this->db->select($this->db->dbprefix('products').".name, ".$this->db->dbprefix('products').".code, COALESCE(sum(".$this->db->dbprefix('sale_items').".quantity), 0) as sold, ROUND(COALESCE(((sum(".$this->db->dbprefix('sale_items').".subtotal)*".$this->db->dbprefix('products').".tax)/100), 0), 2) as tax, COALESCE(sum(".$this->db->dbprefix('sale_items').".quantity)*".$this->db->dbprefix('sale_items').".cost, 0) as cost, COALESCE(sum(".$this->db->dbprefix('sale_items').".subtotal), 0) as income,
 		ROUND((COALESCE(sum(".$this->db->dbprefix('sale_items').".subtotal), 0)) - COALESCE(sum(".$this->db->dbprefix('sale_items').".quantity)*".$this->db->dbprefix('sale_items').".cost, 0) -COALESCE(((sum(".$this->db->dbprefix('sale_items').".subtotal)*".$this->db->dbprefix('products').".tax)/100), 0), 2)
@@ -59,6 +59,9 @@ class Reports_model extends CI_Model
 		->join('products', 'sale_items.product_id=products.id', 'left' )
 		->join('sales', 'sale_items.sale_id=sales.id', 'left' )
 		->group_by('products.id');
+		if($product) { $this->db->where('products.id', $product); }
+        if($start_date) { $this->db->where('date >=', $start_date); }
+        if($end_date) { $this->db->where('date <=', $end_date); }
 		$q = $this->db->get('sale_items');
 		if($q->num_rows() > 0) {
 			foreach (($q->result()) as $row) {

@@ -349,12 +349,11 @@ class Reports extends MY_Controller
     function print_products()
     {
 
-        $this->data['error'] = (validation_errors() ? validation_errors() : $this->session->flashdata('error'));
-
-        $this->data['products'] = $this->reports_model->getAllProducts();
+        $product = $this->input->post('product_hidden') ? $this->input->post('product_hidden') : NULL;
+        $start_date = $this->input->post('start_date_hidden') ? $this->input->post('start_date_hidden') : NULL;
+        $end_date = $this->input->post('end_date_hidden') ? $this->input->post('end_date_hidden') : NULL;
         $this->data['page_title'] = $this->lang->line("products_report");
-        $this->data['page_title'] = $this->lang->line("products_report");
-        $this->data['alldata']=$this->reports_model->getallproductos();        
+        $this->data['alldata']=$this->reports_model->getallproductos($product, $start_date, $end_date);        
         // echo json_encode($this->data['alldata']);
         $this->load->view($this->theme . 'reports/print_products', $this->data);
     }
@@ -372,8 +371,9 @@ class Reports extends MY_Controller
         ->from('sale_items')
         ->join('products', 'sale_items.product_id=products.id', 'left' )
         ->join('sales', 'sale_items.sale_id=sales.id', 'left' )
+ 
         ->group_by('products.id');
-
+       
         if($product) { $this->datatables->where('products.id', $product); }
         if($start_date) { $this->datatables->where('date >=', $start_date); }
         if($end_date) { $this->datatables->where('date <=', $end_date); }

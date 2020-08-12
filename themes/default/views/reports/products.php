@@ -60,7 +60,13 @@ $v = "?v=1";
             <div class="box box-primary">
                 <div class="box-header">
                     <a href="#" class="btn btn-default btn-sm toggle_form pull-right"><?= lang("show_hide"); ?></a>
-					<a id="report_print_btn" href="./print_products" class="btn btn-primary btn-sm pull-right" target="blank" style="margin-right:  10px;"><i class="fa fa-print"></i> &nbsp; Imprimir</a>
+                    <?= form_open("reports/print_products", 'target="blank"');?>
+                        <input type="hidden" name="product_hidden" value="<?php echo set_value('product');?>">
+                        <input type="hidden" name="start_date_hidden" value="<?php echo set_value('start_date');?>">
+                        <input type="hidden" name="end_date_hidden" value="<?php echo set_value('end_date');?>"> 
+                        <button id="report_print_btn" type="submit" class="btn btn-primary btn-sm pull-right"  style="margin-right:  10px;"><i class="fa fa-print"></i> &nbsp; Imprimir</button>
+
+                    <?= form_close();?>
                     <h3 class="box-title"><?= lang('customize_report'); ?></h3>
 					
                 </div>

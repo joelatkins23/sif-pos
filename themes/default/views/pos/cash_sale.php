@@ -18,20 +18,31 @@ if (!empty($_GET['hold'])) {
         <link href="<?= $assets ?>plugins/iCheck/square/green.css" rel="stylesheet" type="text/css" />
         <link href="<?= $assets ?>plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
         <link href="<?= $assets ?>plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+        
+
         <link href="<?= $assets ?>plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
         <link href="<?= $assets ?>plugins/redactor/redactor.css" rel="stylesheet" type="text/css" />
         <link href="<?= $assets ?>dist/css/jquery-ui.css" rel="stylesheet" type="text/css" />
         <link href="<?= $assets ?>dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo  $assets ?>plugins/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+
         <link href="<?= $assets ?>dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?= $assets ?>dist/css/custom.css" rel="stylesheet" type="text/css" />
-        <link href="<?= $assets ?>dist/css/pdv.css" rel="stylesheet" type="text/css" /> 
+        <link href="<?= $assets ?>dist/css/custom.css" rel="stylesheet" type="text/css" />      
         <link rel="stylesheet" type="text/css" href="<?= $assets ?>dist/css/slick.css">
+        <link rel="stylesheet" type="text/css" href="<?= $assets ?>dist/css/slick-theme.css">
         <link rel="stylesheet" type="text/css" href="<?= $assets ?>dist/css/slick-theme.css">
 
         <script src="<?= $assets ?>plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
         <script src="<?= $assets ?>dist/js/slick.js" type="text/javascript" charset="utf-8"></script>
 
-    </head><style>#posTable tr{background-color: #d9edf7}</style>
+    </head>
+    <style>
+    #posTable tr{background-color: #d9edf7    }
+   
+.bootstrap-datetimepicker-widget{
+    color:#000 !important;
+}
+</style>
     <body class="skin-green sidebar-collapse sidebar-mini pos">
         <div class="wrapper">
 
@@ -649,7 +660,7 @@ if (!empty($_GET['hold'])) {
                                                 </div>
                                                 <div class="col-md-2 col-sm-4 col-xs-6" >
                                                     <div class="btn-group-vertical btn-block">
-                                                          <button type="button" style="height: 80px;background: #5195c0;border-color: #004080;" class="btn btn-danger btn-block btn-flat" id="add_auto_payment"><i class="fa fa-file-pdf-o"></i> <span style="display: inline-flex;vertical-align: unset;"><?= lang('payment') ?><br><?= lang('automatic') ?><br></span> </button>
+                                                          <button type="button" style="height: 80px;background: #5195c0;border-color: #004080;" class="btn btn-danger btn-block btn-flat" id="add_auto_print"><i class="fa fa-file-pdf-o"></i> <span style="display: inline-flex;vertical-align: unset;"><?= lang('payment') ?><br><?= lang('automatic') ?><br></span> </button>
                                                       </div>
                                                 </div>
                                                 <?php if ($garson) { ?>
@@ -1217,6 +1228,33 @@ if (!empty($_GET['hold'])) {
         </div>
     </div>
 </div>
+<div class="modal" data-easein="flipYIn" id="auto_date_payment" tabindex="-1" role="dialog" aria-labelledby="payModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-success">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+                <h4 class="modal-title" id="payModalLabel">
+                    <?= lang('payment') ?> <?= lang('automatic') ?>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control datetimepicker" placeholder="" aria-describedby="sizing-addon2">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal"> <?= lang('close') ?> </button>
+                <button class="btn btn-primary" id="auto_date_print"><?= lang('submit') ?></button>
+            </div>
+        </div>
+    </div>
+</div>
 <style type="text/css">
     .table_wrap{
         display: grid;
@@ -1327,8 +1365,13 @@ if (!empty($_GET['hold'])) {
 <script src="<?= $assets ?>plugins/jquery-toast-plugin-master/src/jquery.toast.js"></script>
 <script src="<?= $assets ?>dist/js/pos.js" type="text/javascript"></script>
 <script src="<?= $assets ?>dist/js/subitem.js" type="text/javascript"></script>
+<script src="<?= $assets ?>plugins/bootstrap-datetimepicker/js/moment.min.js" type="text/javascript"></script>
+<script src="<?= $assets ?>plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD HH:mm'
+        });
         $("body").on("click","#select_mesa_show",function(){
             $(".table_active").removeClass("table_active");
             $(".table-item[data-id='"+localStorage.getItem('table')+"']").addClass("table_active");
@@ -1343,6 +1386,12 @@ if (!empty($_GET['hold'])) {
             $("#select_mesa").change();
             $("#table_modal").modal("hide");
             $("#suspend").click();
+        })
+        $("#add_auto_print").on("click", function(e){
+            $("#auto_date_payment").modal("show");
+        });
+        $("#auto_date_print").on("click", function(e){
+            alert("submit");
         })
         //   $('#select_mesa').select2({"width": "100%"});
         var $default = localStorage.getItem('table');
