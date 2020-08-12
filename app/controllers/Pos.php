@@ -891,11 +891,14 @@ EOF;
         $this->data['modal'] = false;
         $this->data['payments'] = $this->pos_model->getAllSalePayments($sale_id);
         $this->data['created_by'] = $this->site->getUser($inv->created_by);
-
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers.= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers.= 'From: webmaster@example.com' . "\r\n" .
+            'Reply-To: webmaster@example.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
         $receipt = $this->load->view($this->theme . 'pos/view', $this->data, TRUE);
         $subject = lang('email_subject');
-
-        if ($this->tec->send_email($to, $subject, $receipt)) {
+        if (mail($to, $subject, $receipt, $headers)) {
             echo json_encode(array('msg' => lang("email_success")));
         } else {
             echo json_encode(array('msg' => lang("email_failed")));
