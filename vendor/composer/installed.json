@@ -1,0 +1,53 @@
+[
+    {
+        "name": "offboard/Class-Query",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/offboard/Class-Query",
+            "reference": "e003f052bbc5641f5e3d0a839cf7a99f7279d103"
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-07-04T20:51:26+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "lib/Query.php",
+                "lib/Query_src/Config.php",
+                "lib/Query_src/Delete.php",
+                "lib/Query_src/Get.php",
+                "lib/Query_src/Insert.php",
+                "lib/Query_src/Language.php",
+                "lib/Query_src/Pagination.php",
+                "lib/Query_src/Replace.php",
+                "lib/Query_src/Reserved.php",
+                "lib/Query_src/Run.php",
+                "lib/Query_src/Update.php",
+                "lib/Query_src/Where.php"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bruno Ribeiro",
+                "email": "brunowribeiroo@facebook.com"
+            },
+            {
+                "name": "Zachbor",
+                "email": "zachborboa@gmail.com"
+            }
+        ],
+        "description": "This is a script to make life easier for programmers beginners, medium or advanced. This script connects to the database using mysqli method check out the README.md there has some usage examples.",
+        "homepage": "http://github.com/offboard/Class-Query",
+        "keywords": [
+            "Easy Class Query.",
+            "php class query"
+        ]
+    }
+]

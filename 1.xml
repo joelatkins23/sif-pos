@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AuditFile>
+  <Header>    <AuditFileVersion>1.01_01</AuditFileVersion>
+    <CompanyID>5117000668</CompanyID>
+    <TaxRegistrationNumber>000</TaxRegistrationNumber>
+    <TaxAccountingBasis>F</TaxAccountingBasis>
+    <CompanyName>Jacob Chip </CompanyName>
+    <BusinessName> Comercial </BusinessName>
+    <CompanyAddress>
+      <BuildingNumber>F</BuildingNumber>
+      <StreetName>Rua do Compão</StreetName>
+      <AddressDetail>Rua do Compão</AddressDetail>
+      <City>Benguela</City>
+      <PostalCode>0</PostalCode>
+      <Province>Benguela</Province>
+      <Country>AO</Country>
+    </CompanyAddress>
+    <FiscalYear>2020</FiscalYear>
+    <StartDate>2020-08-01</StartDate>
+    <EndDate>2020-08-31</EndDate>
+    <CurrencyCode>AOA</CurrencyCode>
+    <DateCreated>2020-08-11</DateCreated>
+    <TaxEntity>Geral</TaxEntity>
+    <ProductCompanyTaxID>003136359BA034</ProductCompanyTaxID>
+    <SoftwareValidationNumber>230/AGT/2019</SoftwareValidationNumber>
+    <ProductID>SIF - POS</ProductID>
+    <ProductVersion>1.0.4</ProductVersion>
+    
+    <Telephone> 937696096</Telephone>
+    <Fax>0</Fax>
+    <Email>.</Email>
+    <Website>.</Website>
+  </Header>
+  <MasterFiles>
+    
+    <Customer>
+      <CustomerID>1</CustomerID>
+      <AccountID>1</AccountID>
+      <CustomerTaxID>999999999</CustomerTaxID>
+      <CompanyName>Cliente Final</CompanyName>
+      <Contact>9999999</Contact>
+      <BillingAddress>
+        <BuildingNumber>12</BuildingNumber>
+        <StreetName>Benguela</StreetName>
+        <AddressDetail>Benguela</AddressDetail>
+        <City>Benguela</City>
+        
+        
+        <Country>AO</Country>
+      </BillingAddress>
+      <ShipToAddress>
+        <BuildingNumber>12</BuildingNumber>
+        <StreetName>Benguela</StreetName>
+        <AddressDetail>Benguela</AddressDetail>
+        <City>Benguela</City>
+        
+        
+        <Country>AO</Country>
+      </ShipToAddress>
+      <Telephone>9999999</Telephone>
+      
+      <Email>c@c.com</Email>
+      
+      <SelfBillingIndicator>0</SelfBillingIndicator>
+    </Customer>
+    
+    <Supplier>
+      <SupplierID>1</SupplierID>
+      <AccountID>1</AccountID>
+      <SupplierTaxID>999999999</SupplierTaxID>
+      <CompanyName>Modelo</CompanyName>
+      <Contact>0123456789</Contact>
+      <BillingAddress>
+        <BuildingNumber>0</BuildingNumber>
+        <StreetName>Bairro da Graça</StreetName>
+        <AddressDetail>Bairro da Graça</AddressDetail>
+        <City>Benguela</City>
+        
+        <Province>Benguela</Province>
+        <Country>AO</Country>
+      </BillingAddress>
+      <ShipFromAddress>
+        <BuildingNumber>0</BuildingNumber>
+        <StreetName>Bairro da Graça</StreetName>
+        <AddressDetail>Bairro da Graça</AddressDetail>
+        <City>Benguela</City>
+        
+        <Province>Benguela</Province>
+        <Country>AO</Country>
+      </ShipFromAddress>
+      <Telephone>0123456789</Telephone>
+      
+      
+      
+      <SelfBillingIndicator>0</SelfBillingIndicator>
+    </Supplier>
+    <Supplier>
+      <SupplierID>2</SupplierID>
+      <AccountID>2</AccountID>
+      <SupplierTaxID>003136359BA034</SupplierTaxID>
+      <CompanyName>José Barros</CompanyName>
+      <Contact>917254932</Contact>
+      <BillingAddress>
+        <BuildingNumber>0</BuildingNumber>
+        <StreetName>Rua Aires de Almeida Santos</StreetName>
+        <AddressDetail>Rua Aires de Almeida Santos</AddressDetail>
+        <City>Benguela</City>
+        
+        <Province>Benguela</Province>
+        <Country>AO</Country>
+      </BillingAddress>
+      <ShipFromAddress>
+        <BuildingNumber>0</BuildingNumber>
+        <StreetName>Rua Aires de Almeida Santos</StreetName>
+        <AddressDetail>Rua Aires de Almeida Santos</AddressDetail>
+        <City>Benguela</City>
+        
+        <Province>Benguela</Province>
+        <Country>AO</Country>
+      </ShipFromAddress>
+      <Telephone>917254932</Telephone>
+      
+      <Email>mactos.cohen@hotmail.com</Email>
+      
+      <SelfBillingIndicator>0</SelfBillingIndicator>
+    </Supplier>
+    
+    <Product>
+      <ProductType>P</ProductType>
+      <ProductCode>1222</ProductCode>
+      <ProductGroup>Servejas</ProductGroup>
+      <ProductDescription>Coca-Cola 300ml</ProductDescription>
+      <ProductNumberCode>1222</ProductNumberCode>
+      
+    </Product>
+    <Product>
+      <ProductType>S</ProductType>
+      <ProductCode>1001</ProductCode>
+      <ProductGroup>Pratos</ProductGroup>
+      <ProductDescription>Arroz de Camarão</ProductDescription>
+      <ProductNumberCode>1001</ProductNumberCode>
+      
+    </Product>
+    
+    <TaxTable>      <TaxTableEntry>
+        <TaxType>IVA</TaxType>
+        <TaxCountryRegion>AO</TaxCountryRegion>
+        <TaxCode>ISE</TaxCode>
+        <Description>IVA -  Regime de Não Sujeição</Description>
+        
+        <TaxPercentage>0</TaxPercentage>
+      </TaxTableEntry>
+          <TaxTableEntry>
+        <TaxType>IVA</TaxType>
+        <TaxCountryRegion>AO</TaxCountryRegion>
+        <TaxCode>OUT</TaxCode>
+        <Description>Regime Transitório</Description>
+        
+        <TaxPercentage>3</TaxPercentage>
+      </TaxTableEntry>
+          <TaxTableEntry>
+        <TaxType>IVA</TaxType>
+        <TaxCountryRegion>AO</TaxCountryRegion>
+        <TaxCode>ISE</TaxCode>
+        <Description>Transmissão de Bens e Serviços Não Sujeição</Description>
+        
+        <TaxPercentage>0</TaxPercentage>
+      </TaxTableEntry>
+          <TaxTableEntry>
+        <TaxType>IVA</TaxType>
+        <TaxCountryRegion>AO</TaxCountryRegion>
+        <TaxCode>ISE</TaxCode>
+        <Description>Isento Artigo 12.º a) do CIVA</Description>
+        
+        <TaxPercentage>0</TaxPercentage>
+      </TaxTableEntry>
+          <TaxTableEntry>
+        <TaxType>IVA</TaxType>
+        <TaxCountryRegion>AO</TaxCountryRegion>
+        <TaxCode>NOR</TaxCode>
+        <Description>Regime Geral</Description>
+        
+        <TaxPercentage>14</TaxPercentage>
+      </TaxTableEntry>
+          <TaxTableEntry>
+        <TaxType>IS</TaxType>
+        <TaxCountryRegion>AO</TaxCountryRegion>
+        <TaxCode>ISE</TaxCode>
+        <Description>Iposto de Selo</Description>
+        
+        <TaxPercentage>0</TaxPercentage>
+      </TaxTableEntry>
+    </TaxTable>
+  </MasterFiles>
+  
+  <SourceDocuments>
+    <SalesInvoices>
+      <NumberOfEntries>1</NumberOfEntries>
+      <TotalDebit>0</TotalDebit>
+      <TotalCredit>10000</TotalCredit>
+      
+      <Invoice>        <InvoiceNo>FR SIF2020/1</InvoiceNo>
+        <DocumentStatus>
+          <InvoiceStatus>N</InvoiceStatus>
+          <InvoiceStatusDate>2020-08-05T08:48:04</InvoiceStatusDate>
+          
+          <SourceID>superuser</SourceID>
+          <SourceBilling>P</SourceBilling>
+        </DocumentStatus>
+        <Hash>ZYM5tZzpgCKhiUGgUNZ0qyp0bsAs+8GEEXNMVrDlBfu59LzTapr2Aq6668xZI9Yt3troet9jtakRyBuX3c5qEVpFvQkIMF+TqalD+HKbI6vEGDhq+Iu/iMrLqZEoYMoPjk7SJov0AXvIDjMn7nx9ZHAtLCNIJTO6W69L4Z2h8h4=</Hash>
+        <HashControl>1</HashControl>
+        
+        <InvoiceDate>2020-08-05</InvoiceDate>
+        <InvoiceType>FR</InvoiceType>
+        <SpecialRegimes>
+          <SelfBillingIndicator>0</SelfBillingIndicator>
+          <CashVATSchemeIndicator>1</CashVATSchemeIndicator>
+          <ThirdPartiesBillingIndicator>0</ThirdPartiesBillingIndicator>
+        </SpecialRegimes>
+        <SourceID>superuser</SourceID>
+        
+        <SystemEntryDate>2020-08-05T08:48:04</SystemEntryDate>
+        
+        <CustomerID>1</CustomerID>
+        <ShipTo>
+          
+          
+          <Address>
+            <BuildingNumber>12</BuildingNumber>
+            <StreetName>Benguela</StreetName>
+            <AddressDetail>Benguela</AddressDetail>
+            <City>Benguela</City>
+            
+            
+            <Country>AO</Country>
+          </Address>
+        </ShipTo>
+        <ShipFrom>
+          
+          
+          <Address>
+            <BuildingNumber>F</BuildingNumber>
+            <StreetName>Rua do Compão</StreetName>
+            <AddressDetail>Rua do Compão</AddressDetail>
+            <City>Benguela</City>
+            <PostalCode>0</PostalCode>
+            <Province>Benguela</Province>
+            <Country>AO</Country>
+          </Address>
+        </ShipFrom>
+        
+        
+        <Line>
+          <LineNumber>8</LineNumber>
+          <OrderReferences>
+            <OriginatingON>8</OriginatingON>
+            <OrderDate>2020-08-05</OrderDate>
+          </OrderReferences>
+          <ProductCode>1222</ProductCode>
+          <ProductDescription>Coca-Cola 300ml</ProductDescription>
+          <Quantity>2.00</Quantity>
+          <UnitOfMeasure>Uni</UnitOfMeasure>
+          <UnitPrice>10000.0000</UnitPrice>
+          
+          <TaxPointDate>2020-08-05</TaxPointDate>
+          
+          <Description>Coca-Cola 300ml</Description>
+          
+          <CreditAmount>10000.0000</CreditAmount>
+          <Tax>
+            <TaxType>IVA</TaxType>
+            <TaxCountryRegion>AO</TaxCountryRegion>
+            <TaxCode>ISE</TaxCode>
+            <TaxPercentage>0</TaxPercentage>
+          </Tax>
+          <TaxExemptionReason>IVA -  Regime de Não Sujeição</TaxExemptionReason>
+          <TaxExemptionCode>M04</TaxExemptionCode>
+
+          <SettlementAmount>0.0000</SettlementAmount>
+          
+        </Line>
+        
+        <DocumentTotals>
+          <TaxPayable>0.0000</TaxPayable>
+          <NetTotal>20000.00</NetTotal>
+          <GrossTotal>20000</GrossTotal>
+          
+          
+          <Payment>
+            <PaymentMechanism>CC</PaymentMechanism>
+            <PaymentAmount>20000.0000</PaymentAmount>
+            <PaymentDate>2020-08-05</PaymentDate>
+          </Payment>
+        </DocumentTotals>
+        
+      </Invoice>
+    </SalesInvoices>
+    
+    
+    <Payments>
+      <NumberOfEntries>1</NumberOfEntries>
+      <TotalDebit>0</TotalDebit>
+      <TotalCredit>20000</TotalCredit>
+      
+      <Payment>        <PaymentRefNo>RC RC/21</PaymentRefNo>
+        <Period>1</Period>
+        
+        <TransactionDate>2020-08-05</TransactionDate>
+        <PaymentType>RC</PaymentType>
+        
+        
+        <DocumentStatus>
+          <PaymentStatus>N</PaymentStatus>
+          <PaymentStatusDate>2020-08-05T08:48:04</PaymentStatusDate>
+          
+          <SourceID>superuser</SourceID>
+          <SourcePayment>P</SourcePayment>
+        </DocumentStatus>
+        <PaymentMethod>
+          <PaymentMechanism>CC</PaymentMechanism>
+          <PaymentAmount>20000.00</PaymentAmount>
+          <PaymentDate>2020-08-05</PaymentDate>
+        </PaymentMethod>
+        <SourceID>superuser</SourceID>
+        <SystemEntryDate>2020-08-05T08:48:04</SystemEntryDate>
+        <CustomerID>1</CustomerID>
+        <Line>
+          <LineNumber>8</LineNumber>
+          <SourceDocumentID>
+            <OriginatingON>8</OriginatingON>
+            <InvoiceDate>2020-08-05</InvoiceDate>
+            
+          </SourceDocumentID>
+          <SettlementAmount>20000.0000</SettlementAmount>
+          <CreditAmount>20000</CreditAmount>
+          <Tax>
+            <TaxType>IVA</TaxType>
+            <TaxCountryRegion>AO</TaxCountryRegion>
+            <TaxCode>ISE</TaxCode>
+            <TaxPercentage>0</TaxPercentage>
+          </Tax>
+          <TaxExemptionReason>IVA -  Regime de Não Sujeição</TaxExemptionReason>
+          <TaxExemptionCode>M04</TaxExemptionCode>
+
+        </Line>
+        
+        <DocumentTotals>
+          <TaxPayable>0.0000</TaxPayable>
+          <NetTotal>20000.00</NetTotal>
+          <GrossTotal>20000.0000</GrossTotal>
+          <Settlement>
+            <SettlementAmount>20000.0000</SettlementAmount>
+          </Settlement>
+          
+        </DocumentTotals>
+        
+      </Payment>
+    </Payments>
+    
+  </SourceDocuments>
+</AuditFile>
