@@ -31,16 +31,17 @@ class Customers extends MY_Controller
     	$this->datatables
     	->select("id, name, phone,  email, cf1, endereco")
     	->from("customers")
-    	->add_column("Actions", "<div class='text-center'><div class='btn-group'><a href='" . site_url('customers/edit/$1') . "' class='edit_customer tip btn btn-warning btn-xs' title='".$this->lang->line("edit_customer")."'><i class='fa fa-edit'></i></a> <a href='" . site_url('customers/delete/$1') . "' onClick=\"return confirm('". $this->lang->line('alert_x_customer') ."')\" class='tip btn btn-danger btn-xs' title='".$this->lang->line("delete_customer")."'><i class='fa fa-trash-o'></i></a><a href='" . site_url('customers/print/$1') . "' class='print_customer tip btn btn-success btn-xs' title='".$this->lang->line("edit_customer")."' target='blank'><i class='fa fa-print'></i></a></div></div>", "id")
+    	->add_column("Actions", "<div class='text-center'><div class='btn-group'><a href='" . site_url('customers/edit/$1') . "' class='edit_customer tip btn btn-warning btn-xs' title='".$this->lang->line("edit_customer")."'><i class='fa fa-edit'></i></a> <a href='" . site_url('customers/delete/$1') . "' onClick=\"return confirm('". $this->lang->line('alert_x_customer') ."')\" class='tip btn btn-danger btn-xs' title='".$this->lang->line("delete_customer")."'><i class='fa fa-trash-o'></i></a><a href='" . site_url('customers/print_client/$1') . "' class='print_customer tip btn btn-success btn-xs' title='".$this->lang->line("edit_customer")."' target='blank'><i class='fa fa-print'></i></a></div></div>", "id")
     	->unset_column('id');
 
     	echo $this->datatables->generate();
 
     }
-	// function print($id){
-    // 	$this->data['page_title'] = lang('customers');    	
-	// 	$this->load->view($this->theme . 'reports/print_products', $this->data);
-	// }
+	function print_client($id){
+		$this->data['alldata']=$this->customers_model->getclientdata($id);
+    	$this->data['page_title'] = lang('customers');    	
+		$this->load->view($this->theme . 'customers/print_clients', $this->data);
+	}
 	function add()
 	{
 		$this->load->helper("database_helper");

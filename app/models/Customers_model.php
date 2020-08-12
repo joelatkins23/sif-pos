@@ -15,7 +15,19 @@ class Customers_model extends CI_Model
 		} 
 		return FALSE;
 	}
-	
+	public function getclientdata($id) 
+	{
+		$this->db->select("id, date, customer_name, InvoiceNo,  status,  tec_sales.grand_total, tec_sales.paid, (tec_sales.grand_total-tec_sales.paid) as balance,  InvoiceStatus ")
+		->where('InvoiceType', "FT")
+		->where('customer_id', $id);
+		$q = $this->db->get('sales');
+		if($q->num_rows() > 0) {
+			foreach (($q->result()) as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
 	public function addCustomer($data = array())
 	{
 		if($this->db->insert('customers', $data)) {
